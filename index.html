@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/B | THE GANG</title>
+    <style>
+        /* Modern & Dark Tema */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #8b5cf6; /* Mor - Genç ve dinamik */
+            --text-color: #f1f5f9;
+            --neon-blue: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Arka Plan Süsü */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 80%);
+            z-index: -1;
+        }
+
+        /* Üst Başlık */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, var(--bg-color)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80'); /* Temsili sınıf ortamı */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .logo {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -5px;
+            margin: 0;
+            background: linear-gradient(to right, #8b5cf6, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+        }
+
+        /* İçerik Alanı */
+        .container {
+            max-width: 1200px;
+            margin: -100px auto 50px;
+            padding: 0 20px;
+        }
+
+        /* Ders Programı Kartı */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .day-column {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .day-column:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .day-column h3 {
+            color: var(--neon-blue);
+            font-size: 1.1rem;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .lesson {
+            font-size: 0.85rem;
+            padding: 5px 0;
+            display: block;
+            opacity: 0.8;
+        }
+
+        /* "Öğrenci Kafası" Detaylar */
+        .status-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag.red { background: #ef4444; }
+        .tag.blue { background: #3b82f6; }
+        .tag.purple { background: #8b5cf6; }
+
+        /* Alt Kısım */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .small-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 5px; margin-bottom: 0;">SINIFIN RESMİ MERKEZİ</p>
+        <h1 class="logo">11/B TAYFA</h1>
+        <div class="status-tags">
+            <span class="tag purple">#YKSYolcusu</span>
+            <span class="tag blue">#ZirveTekKişilik</span>
+            <span class="tag red">#SınavStresi</span>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="glass-card">
+            <h2 style="text-align: center; font-size: 2rem;">🗓️ Bu Hafta Ne Var?</h2>
+            
+            <div class="schedule-grid">
+                <div class="day-column">
+                    <h3>Pazartesi</h3>
+                    <span class="lesson">🇬🇧 İngilizce</span>
+                    <span class="lesson">📖 Kuran</span>
+                    <span class="lesson">🧠 Psikoloji</span>
+                    <span class="lesson">📚 Edebiyat</span>
+                </div>
+
+                <div class="day-column">
+                    <h3>Salı</h3>
+                    <span class="lesson">🕌 Arapça</span>
+                    <span class="lesson">⏳ Tarih</span>
+                    <span class="lesson">📖 Kuran</span>
+                    <span class="lesson">🎤 Hitabet</span>
+                    <span class="lesson">🏠 Aile Hayatı</span>
+                </div>
+
+                <div class="day-column">
+                    <h3>Çarşamba</h3>
+                    <span class="lesson">🌍 Coğrafya</span>
+                    <span class="lesson">📜 Tefsir</span>
+                    <span class="lesson">🖋️ Seç. Edebiyat</span>
+                    <span class="lesson">🔢 Matematik</span>
+                </div>
+
+                <div class="day-column">
+                    <h3>Perşembe</h3>
+                    <span class="lesson">🔢 Matematik</span>
+                    <span class="lesson">📚 Edebiyat</span>
+                    <span class="lesson">💡 Felsefe</span>
+                    <span class="lesson">🤝 Adabı Muaşeret</span>
+                </div>
+
+                <div class="day-column">
+                    <h3>Cuma</h3>
+                    <span class="lesson">📚 Edebiyat</span>
+                    <span class="lesson">🛡️ Akaid</span>
+                    <span class="lesson">🎤 Hitabet</span>
+                    <span class="lesson">🌍 Coğrafya</span>
+                    <span class="lesson">⚽ Beden</span>
+                    <span class="lesson">🔢 Matematik</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="small-card">
+                <h3>🔥 Günün Sözü</h3>
+                <p style="font-style: italic; color: #cbd5e1;">"Hocam bu konu sınavda çıkacak mı?" - Sınıfın %99'u</p>
+            </div>
+            <div class="small-card" style="border: 1px dashed #475569;">
+                <h3>📢 Duyuru</h3>
+                <p>Furkan bu yaptığın çok yanlış...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        11/B Sınıfı | "Gelecek Henüz Yazılmadı"
+    </footer>
+
+</body>
+</html>
